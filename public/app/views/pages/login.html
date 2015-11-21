@@ -1,0 +1,41 @@
+
+<div class="vertical-center">
+    <div class="jumbotron text-center">
+        <div class="container">
+            <div class="row">
+                <p class="text-muted small">Tells us your Story</p>
+            </div>
+            <div class="login-form-container">
+                <form id="login-form" class="text-left" ng-submit="loginCtl.doLogin()">
+                    <div class="login-form-main-message"></div>
+                    <div class="main-login-form">
+                        <div class="login-group">
+                            <div class="form-group">
+                                <label for="username" class="sr-only">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="loginCtl.loginData.username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="sr-only">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="loginCtl.loginData.password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etc-login-form">
+                        <p>Forgot your password? <a href="/forgotPassword">Click here</a></p>
+                        <p>New user? <a href="/signUp">Create new account</a></p>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="spinner-loader pull-left" ng-show="loginCtl.processing"></div>
+                        <button type="submit" class="btn btn-primary pull-right margin-top-10"><i class="glyphicon glyphicon-chevron-right"></i> Login</button>
+                    </div>
+                    <div class="row no-margin" ng-show="loginCtl.hasError">
+                        <div class="alert alert-warning margin-top-10" role="alert">
+                            <strong>Alert</strong>
+                            <span class="small">{{loginCtl.error}}</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

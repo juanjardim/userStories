@@ -1,0 +1,33 @@
+<div ng-if="storyCtl.creatingNewStory">
+    <form class="form-horizontal" ng-submit="storyCtl.createStory()">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                ng-click="storyCtl.hideNewStoryForm()"><span aria-hidden="true">&times;</span></button>
+        <div class="form-group">
+            <div class="col-md-12">
+            <textarea name="content" class="form-control" id="content" rows="10" placeholder="Tell us your story"
+                      ng-model="storyCtl.storyData.content">
+            </textarea>
+            </div>
+            <div class="row no-margin">
+                <button type="submit" class="btn btn-success pull-right margin-top-10"><i
+                        class="glyphicon glyphicon-pencil"></i> Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div ng-if="!storyCtl.creatingNewStory">
+    <div class="row no-margin">
+        <button type="submit" class="btn btn-primary pull-right" ng-click="storyCtl.showNewStoryForm()"><i
+                class="glyphicon glyphicon-pencil"></i> Create New Story
+        </button>
+    </div>
+    <div class="list-group" ng-repeat="story in storyCtl.stories">
+        <h4 class="list-group-item-heading">{{story.created | date:'medium'}}</h4>
+
+        <p class="list-group-item-text">
+            {{story.content}}
+        </p>
+    </div>
+</div>

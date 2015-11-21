@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="UserStoryApp">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>User Story</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header>
+    <div class="navbar navbar-default" ng-controller="MainController as mainCtl">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <span class="glyphicon glyphicon-book"></span> User Story
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/users"></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-show="mainCtl.loggedIn"><a href="#">Hello {{mainCtl.user.username}}</a></li>
+                <li ng-show="mainCtl.loggedIn"><a href="#" ng-click="mainCtl.doLogout()">Logout</a></li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<div class="container">
+    <div ng-view></div>
+</div>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="../lib/angular-route/angular-route.min.js"></script>
+
+<script type="text/javascript" src="/app/app.routes.js"></script>
+<script type="text/javascript" src="/app/controllers/MainCtl.js"></script>
+<script type="text/javascript" src="/app/controllers/UserCtl.js"></script>
+<script type="text/javascript" src="/app/controllers/StoryCtl.js"></script>
+<script type="text/javascript" src="/app/services/AuthService.js"></script>
+<script type="text/javascript" src="/app/services/UserService.js"></script>
+<script type="text/javascript" src="/app/services/StoryService.js"></script>
+<script type="text/javascript" src="/app/app.js"></script>
+</body>
+</html>

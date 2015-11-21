@@ -1,0 +1,33 @@
+<div class="vertical-center">
+    <div class="jumbotron text-center">
+        <div class="container">
+            <div class="row">
+                <p class="text-muted small">Tells us your Story</p>
+            </div>
+            <div class="login-form-container">
+                <form id="login-form" class="text-left" ng-submit="signupCtl.signupUser()">
+                    <div class="login-form-main-message"></div>
+                    <div class="main-login-form">
+                        <div class="login-group">
+                            <div class="form-group">
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="signupCtl.userData.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="sr-only">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="signupCtl.userData.username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="sr-only">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="signupCtl.userData.password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <button type="submit" class="btn btn-success pull-right margin-top-10"><i class="glyphicon glyphicon-chevron-right"></i> Signup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
